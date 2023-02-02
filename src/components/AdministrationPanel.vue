@@ -152,7 +152,7 @@ init();
           class="empty-table"
           v-if="userStorage.users === undefined || userStorage.users.length < 1"
         >
-          <p>No bill yet!</p>
+          <p>No User yet!</p>
         </div>
       </div>
     </div>

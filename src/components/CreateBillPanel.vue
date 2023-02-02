@@ -17,7 +17,7 @@ const dueDate = ref("");
 const createError = ref(false);
 
 const goTo = (path: string) => {
-  router.push("/bills")
+  router.push("/bills");
 };
 
 const resetNewBillValues = () => {
@@ -33,7 +33,8 @@ const submit = () => {
     buyersName.value === "" ||
     itemName.value === "" ||
     comment.value === "" ||
-    price.value < 0
+    price.value < 0 ||
+    dueDate.value === ""
   ) {
     createError.value = true;
   } else {
@@ -56,7 +57,7 @@ const submit = () => {
         toast.error(error.message);
       })
       .finally(() => {
-        resetNewBillValues()
+        resetNewBillValues();
       });
   }
 };
@@ -100,11 +101,18 @@ const submit = () => {
           <div class="col">
             <label class="textarea-label">Due Date</label>
             <input
+              :class="[
+                createError && dueDate === '' && 'date-picker-error',
+                !createError || (dueDate !== '' && 'date-picker'),
+              ]"
               class="date-picker"
               type="datetime-local"
               name="dueDate"
               v-model="dueDate"
             />
+            <label v-if="createError && dueDate === ''" class="error-label"
+              >Select a date!</label
+            >
           </div>
         </div>
         <div class="row text-align-center">
@@ -173,6 +181,12 @@ const submit = () => {
 
 .date-picker {
   border: 1px solid lightgray;
+  height: 39px;
+  border-radius: 7px;
+}
+
+.date-picker-error {
+  border: 1px solid red;
   height: 39px;
   border-radius: 7px;
 }
