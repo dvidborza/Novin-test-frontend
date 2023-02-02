@@ -54,7 +54,7 @@ const submit = () => {
         toast.success("The Bill save successfully!");
       })
       .catch((error) => {
-        toast.error(error.message);
+        toast.error("Bill saving error! Try again!");
       })
       .finally(() => {
         resetNewBillValues();

@@ -44,7 +44,7 @@ const register = () => {
         window.location.href = "/login";
       })
       .catch((error) => {
-        toast.error(error.message);
+        toast.error("Registration error! Try again!");
       });
   }
 };

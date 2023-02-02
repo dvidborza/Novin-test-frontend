@@ -27,7 +27,7 @@ const init = () => {
       console.log(result.createdDate.toString().split('.')[0]);
     })
     .catch((error) => {
-      toast.error(error.message);
+      toast.error("Something went wrong! Try again!");
     });
 };
 

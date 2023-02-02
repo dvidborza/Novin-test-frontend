@@ -38,7 +38,7 @@ const deleteUser = (id: Number) => {
       toast.success("User delete successfully!");
     })
     .catch((error) => {
-      toast.error(error.message);
+      toast.error("User deletion error! Try again!");
     });
 };
 
@@ -74,7 +74,7 @@ const submitModify = () => {
           closeModifyModal();
         })
         .catch((error) => {
-          toast.error(error.message);
+          toast.error("User modify error! Try Again!");
         });
     }
   }

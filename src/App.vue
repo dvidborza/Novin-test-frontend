@@ -13,6 +13,8 @@ router.options.routes.forEach((element) => {
     }
   }
 });
+
+document.title = 'Novin Test'
 </script>
 
 <template>
@@ -21,7 +23,7 @@ router.options.routes.forEach((element) => {
     v-if="authStorage.loggedUser !== null"
   >
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Borza Dávid</a>
+      <a class="navbar-brand" href="/">Novin</a>
       <button
         class="navbar-toggler"
         type="button"
